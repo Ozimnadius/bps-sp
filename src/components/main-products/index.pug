@@ -1,0 +1,10 @@
+.main-products
+    h2.main-products__title Продукты созданные на платформе
+    .main-products__items
+        each i in ['Онлайн<br>авторизация операций','Маршрутизация<br>операций','ATM/Kiosk/POS','Мгновенные<br>платежи (СБП)','Электронная<br>коммерция','Персонализация<br>карт']
+            a(href='/').main-products__item
+                <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M32.4807 16.2286L32.2044 16.4047L0.000116827 32.6836L16.253 16.2286L0.000118256 -1.41977e-06L32.4807 16.2286Z" fill="#1B4ED1"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.62622 16.2286L0.506071 32.6836L4.57872 16.2286L0.506072 -3.54943e-07L8.62622 16.2286Z" fill="#1B4ED1"/>
+                </svg>
+                span!=i

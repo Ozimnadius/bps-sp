@@ -1,0 +1,98 @@
+.footer {
+  background-color: var(--color-main);
+  padding-top: 65px;
+  padding-bottom: 120px;
+  @media (max-width: 767.98px){
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    @media (max-width: 1023.98px) {
+      grid-template-columns: repeat(2,1fr);
+      grid-template-areas: 'logo addr' 'menu contacts';
+      gap: 40px 20px;
+    }
+    @media (max-width: 767.98px){
+       grid-template-columns: 100%;
+      grid-template-areas: 'logo' 'contacts' 'addr' 'menu';
+    }
+  }
+
+  &__col {
+    &:nth-child(1) {
+      @media (max-width: 1023.98px) {
+        grid-area: logo;
+      }
+    }
+
+    &:nth-child(2) {
+      @media (max-width: 1023.98px) {
+        grid-area: menu;
+      }
+    }
+
+    &:nth-child(3) {
+      @media (max-width: 1023.98px) {
+        grid-area: contacts;
+      }
+    }
+
+    &:nth-child(4) {
+      @media (max-width: 1023.98px) {
+        grid-area: addr;
+      }
+    }
+
+  }
+
+  &__logo {
+    max-width: 150px;
+    @media (max-width: 767.98px){
+      max-width: 130px;
+    }
+  }
+
+  &__title {
+    @include header;
+    font-size: 28px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+
+  &__items {
+    display: grid;
+    gap: 10px;
+  }
+
+  &__item {
+    color: #ffffff;
+    font-size: 16px;
+    @include tr;
+
+    &:hover {
+      color: #92b0ff;
+    }
+  }
+
+  &__tel {
+    a {
+      color: #ffffff;
+      font-size: 20px;
+      @include tr;
+
+      &:hover {
+        color: #92b0ff;
+      }
+    }
+  }
+
+  &__addr {
+    font-size: 16px;
+    color: #ffffff;
+  }
+}

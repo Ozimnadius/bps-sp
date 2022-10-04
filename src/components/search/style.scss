@@ -1,0 +1,107 @@
+.search{
+  padding-top: 60px;
+  padding-bottom: 120px;
+
+  &__title{
+    @include header;
+    font-size: 55px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 60px;
+    @media (max-width: 767.98px){
+      font-size: 35px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form{
+    display: grid;
+    grid-template-columns: 1fr 239px;
+    gap: 30px;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    @media (max-width: 767.98px){
+      position: relative;
+      gap: 0px;
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__input{
+    font-size: 20px;
+    padding: 10px 0;
+    width: 100%;
+    border-bottom: 1px solid #d7d7d7;
+    @media (max-width: 767.98px){
+      padding-right: 40px;
+    }
+  }
+
+  &__submit{
+    @include btn-blue;
+    width: 100%;
+    height: 59px;
+    @media (max-width: 767.98px){
+      width: auto;
+      height: auto;
+      font-size: 0;
+      background: none;
+      border: none;
+      position: absolute;
+      top: 9px;
+      right: -5px;
+    }
+
+    svg{
+      display: none;
+      @media (max-width: 767.98px){
+        display: block;
+      }
+    }
+  }
+
+  &__clear{
+    display: none;
+    position: absolute;
+    top: 9px;
+    right: 30px;
+    background: #fff;
+    @media (max-width: 767.98px){
+      display: block;
+    }
+  }
+
+  &__list{
+    margin: 70px auto 100px;
+    display: grid;
+    gap: 40px;
+    max-width: 1045px;
+    width: 100%;
+    @media (max-width: 1919.98px){
+      margin-left: 0;
+      margin-right: 0;
+    }
+    @media (max-width: 767.98px){
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item{
+    display: grid;
+    gap: 10px;
+  }
+
+  &__name{
+    @include header;
+    font-size: 24px;
+    color: var(--color-main);
+    text-transform: uppercase;
+  }
+
+  &__desc{
+    font-size: 20px;
+    line-height: 130%;
+  }
+
+}

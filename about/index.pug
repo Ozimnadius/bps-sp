@@ -1,0 +1,22 @@
+extends ../src/core/main
+
+block content
+    main.page
+        .page__section
+            -
+                var data = {
+                    img: '/images/content/banner/about.jpg',
+                    title: 'О компании',
+                    desc: 'Текст-заполнитель — это текст, который имеет некоторые характеристики реального письменного текста, но является случайным набором слов или сгенерирован иным образом.'
+                }
+            include ../src/components/banner/index
+        .page__section
+            include ../src/components/about/index
+        .page__section
+            include ../src/components/main-partners/index
+        section.page__section.grey
+            .container
+                include ../src/components/main-consult/index
+
+
+

@@ -1,0 +1,5 @@
+.list
+    .list__title!=data.title
+    .list__links
+        each i in data.list
+            a(href=i.url).list__link= i.title

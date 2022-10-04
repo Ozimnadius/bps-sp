@@ -1,0 +1,17 @@
+header.header
+    .header__left
+        .header__logo
+            a(href="/")
+                img(src="/images/content/logo.png" alt="lorem")
+        .header__search
+            include ../header-search/index
+    .header__right
+        .header__nav
+            include ../nav/index
+        .header__link
+            a(href='/contacts/') Контакты
+        button(type='button' data-event='openMenu').header__open-mmenu
+            <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 6H20M0 1H20M0 11H20" stroke="black"/>
+            </svg>
+

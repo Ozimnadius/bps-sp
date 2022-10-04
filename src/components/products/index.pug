@@ -1,0 +1,13 @@
+.products
+    .top.products__top
+        h2.top__title Программные продукты
+        button(type='button' data-event='openCall').top__btn
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 16L16 1M16 1V16M16 1H1" stroke="#1B4ED1" stroke-width="2"/>
+            </svg>
+            span связаться с нами
+    .products__items
+        each i in GLOBALS.products
+            a(href="/products/detail/").products__item
+                span.products__inner
+                    span.products__name!=i

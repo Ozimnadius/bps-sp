@@ -1,0 +1,30 @@
+.platforms
+    .platforms__top.top
+        h2.top__title Программные платформы
+        button(type='button' data-event='openCall').top__btn
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 16L16 1M16 1V16M16 1H1" stroke="#1B4ED1" stroke-width="2"/>
+            </svg>
+            span связаться с нами
+    .platforms__items
+        each i in GLOBALS.platforms
+            a(href='/platforms/detail/').platforms__item.platform
+                span.platform__flip
+                    span.platform__front
+                        span.platform__title= i.title
+                        span.platform__img
+                            img(src=i.img alt=i.title)
+                        span.platform__svg
+                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.35938 19.8813L19.8676 1.37305M19.8676 1.37305V19.8813M19.8676 1.37305H1.35938" stroke="#1B4ED1" stroke-width="2"/>
+                            </svg>
+                    span.platform__back
+                        span.platform__company СмартВиста
+                        span.platform__title Интеграционная платформа
+                        span.platform__txt Умная шина для большого количества систем, работающая через настройку гибкой маршрутизации сообщений с использованием оркестратора бизнес-процессов для преобразования форматов данных, для добавления новых сервисов.
+                        span.platform__svg
+                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.880581 0.999999L19.5447 19.6641M19.5447 19.6641L0.88058 19.6641M19.5447 19.6641L19.5447 1" stroke="white" stroke-width="2.01684"/>
+                            </svg>
+
+

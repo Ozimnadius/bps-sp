@@ -1,0 +1,21 @@
+.nav{
+  display: flex;
+  gap: 25px;
+  @media (max-width: 1919.98px){
+     gap: 50px;
+  }
+
+  &__item{
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    font-family: "Roboto Condensed", serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    @include tr;
+
+    &:hover{
+      color: #1744b6;
+    }
+  }
+}

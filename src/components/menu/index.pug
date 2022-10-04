@@ -1,0 +1,15 @@
+.menu
+    .menu__top
+        .menu__logo
+            img(src="/images/content/logo-2.png" alt="lorem")
+        button(type='button' data-event='closeMenu').menu__close
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25.3332 8.54602L23.4532 6.66602L15.9998 14.1193L8.5465 6.66602L6.6665 8.54602L14.1198 15.9993L6.6665 23.4527L8.5465 25.3327L15.9998 17.8793L23.4532 25.3327L25.3332 23.4527L17.8798 15.9993L25.3332 8.54602Z" fill="black"/>
+            </svg>
+    .menu__items
+        each i in GLOBALS.nav
+            a(href=i.url).menu__item
+                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 0.999999L16 16M16 16V0.999999M16 16H1" stroke="#232323" stroke-width="2"/>
+                </svg>
+                span= i.title

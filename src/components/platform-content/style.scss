@@ -1,0 +1,20 @@
+.platform-content{
+  display: grid;
+  gap: 40px;
+  max-width: 1245px;
+
+  h4{
+    font-size: 28px;
+    @media (max-width: 1023.98px){
+      font-size: 24px;
+    }
+    @media (max-width: 767.98px){
+      font-size: 20px;
+    }
+  }
+
+  p{
+    font-size: 18px;
+    line-height: 130%;
+  }
+}

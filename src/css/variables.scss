@@ -1,0 +1,36 @@
+:root{
+  --font: Inter,Arial, sans-serif;
+  --font-size: 17px;
+  --font-weight: 400;
+  --line-height: 1.4;
+
+  --container-width: 1440px;
+  --container-padding: 0 20px;
+
+  --color-main: #1b4ed1;
+  --color-bg: #ffffff;
+  --color-gray: #f5f5f5;
+  --color-main-hover: #3f75ff;
+  --color-txt: #232323;
+
+  --transition: 0.4s;
+
+  --header-height: 80px;
+  --margin-segment: 10px;
+  @media (max-width: 1919.98px){
+    --container-width: 1220px;
+  }
+  @media (max-width: 1439.98px){
+    --container-padding: 0 80px;
+    --margin-segment: 7.5px;
+  }
+  @media (max-width: 1023.98px){
+    --header-height: 70px;
+    --container-padding: 0 40px;
+  }
+  @media (max-width: 767.98px){
+    --margin-segment: 5px;
+    --container-padding: 0 15px;
+    --font-size: 14px;
+  }
+}

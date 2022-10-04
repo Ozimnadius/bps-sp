@@ -1,0 +1,26 @@
+extends src/core/main
+
+block variables
+    - var title = 'Главная'
+    - var gray = true
+
+block content
+    main.page
+        .page__section
+            include src/components/main-banner/index
+        .page__section.margin-bottom-90
+            include src/components/main-advs/index
+        .page__section.margin-bottom-90
+            .container
+                include src/components/main-slider/index
+        .page__section.margin-bottom-110
+            .container
+                include src/components/main-products/index
+        .page__section
+            include src/components/main-partners/index
+        .page__section
+            .container
+                include src/components/main-consult/index
+
+
+

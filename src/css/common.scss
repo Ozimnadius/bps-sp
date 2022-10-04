@@ -1,0 +1,97 @@
+@for $i from 1 through 20 {
+
+  .margin-top-#{$i*10} {
+    margin-top: calc(var(--margin-segment) * $i);
+  }
+
+  .margin-bottom-#{$i*10} {
+    margin-bottom: calc(var(--margin-segment) * $i);
+  }
+
+  .padding-top-#{$i*10} {
+    padding-top: calc(var(--margin-segment) * $i);
+  }
+
+  .padding-bottom-#{$i*10} {
+    padding-bottom: calc(var(--margin-segment) * $i);
+  }
+
+}
+
+.gray {
+  background-color: var(--color-gray);
+}
+
+.grey {
+  background-color: #F2F4F8;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  @media (max-width: 767.98px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  &__title {
+    @include h2;
+    text-transform: uppercase;
+    @media (max-width: 1919.98px) {
+      font-size: 45px;
+    }
+    @media (max-width: 767.98px) {
+      font-size: 33px;
+      font-weight: 500;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 30px;
+    margin-right: -10px;
+  }
+
+  &__arr {
+    padding: 10px;
+    color: #d7d7d7;
+    @include tr;
+
+    &:hover {
+      color: var(--color-main);
+    }
+  }
+
+  &__btn {
+    @include header;
+    text-transform: uppercase;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--color-main);
+    cursor: pointer;
+    white-space: nowrap;
+    @include tr;
+
+    &:hover {
+      color: var(--color-main-hover);
+    }
+
+    svg {
+      flex-shrink: 0;
+
+      path {
+        stroke: currentColor;
+      }
+    }
+  }
+}
+
+.ovh {
+  overflow: hidden;
+}
+

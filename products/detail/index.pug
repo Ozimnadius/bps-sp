@@ -1,0 +1,71 @@
+extends ../../src/core/main
+
+block content
+    main.page
+        .page__section.margin-bottom-70
+            -
+                var data = {
+                    img: '/images/content/banner/products-detail.jpg',
+                    title: 'СмартВиста Персонализация карт',
+                }
+            include ../../src/components/banner/index
+        .page__section.margin-bottom-70
+            -
+                var data = {
+                    h4: 'Персонализация карт представляет собой полнофункциональное решение, позволяющее эмитенту быстро и легко создавать новые карточные продукты, способные привлекать новых потребителей и одновременно стимулировать более активное использование карт действующими клиентами. ',
+                    p: 'Решение рассчитано на поддержку карт любого типа, включая дебетовые, кредитные и предоплаченные<br>карты, и ряда дополнительных продуктов, таких как кредиты для физических лиц и услуги страхования.'
+                }
+            .container
+                include ../../src/components/platform-content/index
+        .page__section.margin-bottom-100
+            .container
+                -
+                    var data = [
+                        'Создание карточного продукта',
+                        'Подготовка данных персонализации',
+                        'Персонализация чипа',
+                    ];
+                include ../../src/components/tasks/index
+        .page__section.margin-bottom-100
+            .container
+                -
+                    var data = {
+                        title: 'Платформа, на которой<br> построен продукт',
+                        list: [
+                            {
+                                title: 'Транзакционная',
+                                url: '/platforms/detail/'
+                            }
+                        ],
+                    };
+                include ../../src/components/list/index
+        .page__section
+            -
+                var data = {
+                    list: [
+                        '/images/content/stack/wildfly.png',
+                        '/images/content/stack/oracleweb.png',
+                        '/images/content/stack/imb.png',
+                        '/images/content/stack/java.png',
+                        '/images/content/stack/oracle.png',
+                        '/images/content/stack/postgre.png',
+                        '/images/content/stack/datacard.png',
+                    ]
+                };
+            include ../../src/components/stack/index
+        .page__section.margin-bottom-100
+            .container
+                include ../../src/components/patent/index
+        .page__section.margin-bottom-140
+            .container
+                include ../../src/components/products-info/index
+        hr.margin-bottom-150
+        .page__section.margin-bottom-140
+            .container
+                include ../../src/components/more-products/index
+        section.page__section.grey
+            .container
+                include ../../src/components/main-consult/index
+
+
+

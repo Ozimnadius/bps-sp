@@ -1,0 +1,8 @@
+.banner
+    .banner__img
+        img(src=data.img alt="Программные платформы")
+    .banner__wrap
+        .container
+            h2.banner__title!=data.title
+            if data.desc
+                .banner__desc!=data.desc

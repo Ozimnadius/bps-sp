@@ -1,0 +1,19 @@
+extends ../src/core/main
+
+block content
+    main.page
+        .page__section.margin-bottom-140
+            -
+                var data = {
+                    img: '/images/content/banner/products.jpg',
+                    title: 'Программные продукты',
+                    desc: 'Мы разрабатываем продукты для платежных и финансовых  сервисов, основываясь на нуждах рынка и опираясь на базовые компетенции наших  платформ. '
+                }
+            include ../src/components/banner/index
+        .page__section.margin-bottom-140
+            .container
+                include ../src/components/products/index
+
+
+
+

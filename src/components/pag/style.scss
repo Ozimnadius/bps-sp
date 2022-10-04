@@ -1,0 +1,36 @@
+.pag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  &__arr {
+    color: #d7d7d7;
+
+    &:hover {
+      color: var(--color-main);
+    }
+
+    svg {
+      path {
+        fill: currentColor;
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+  }
+
+  &__item {
+    @include header;
+    color: #7c7c7c;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 10px;
+
+    &:hover {
+      color: var(--color-main);
+    }
+  }
+}

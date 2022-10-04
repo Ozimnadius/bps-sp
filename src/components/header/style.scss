@@ -1,0 +1,106 @@
+.header{
+  display: grid;
+  grid-template-columns: repeat(2,50%);
+  border-bottom: 1px solid #143eaa;
+
+  @media (max-width: 1919.98px){
+     grid-template-columns: 430px 1fr;
+  }
+  @media (max-width: 1439.98px){
+    grid-template-columns: 1fr auto;
+  }
+
+  &__left{
+    background-color: #1744b6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+
+    padding-left: 45px;
+    padding-right: 65px;
+    @media (max-width: 1919.98px){
+      padding-left: 25px;
+      padding-right: 35px;
+    }
+    @media (max-width: 1439.98px){
+       justify-content: flex-start;
+    }
+    @media (max-width: 1023.98px){
+       grid-template-columns: auto auto;
+    }
+    @media (max-width: 767.98px){
+      padding-left: 15px;
+    }
+  }
+
+  &__logo{
+    max-width: 110px;
+    @media (max-width: 1439.98px){
+      margin-right: 190px;
+    }
+    @media (max-width: 1023.98px){
+      max-width: 90px;
+      margin-right: 100px;
+    }
+  }
+
+  &__search{
+    @media (max-width: 767.98px){
+      display: none;
+    }
+  }
+
+  &__right{
+    display: flex;
+    align-items: center;
+    height: var(--header-height);
+    padding-left: 65px;
+    @media (max-width: 1919.98px){
+      padding-left: 50px;
+    }
+    @media (max-width: 1439.98px){
+      padding-left: 0;
+    }
+
+  }
+
+  &__nav{
+    @media (max-width: 1439.98px){
+      display: none;
+    }
+  }
+
+  &__link{
+    margin-left: auto;
+    @media (max-width: 767.98px){
+      display: none;
+    }
+
+    a{
+      @include btn-blue;
+      width: 180px;
+      height: var(--header-height);
+      font-family: "Roboto Condensed", serif;
+      text-transform: uppercase;
+
+      &:hover{
+        background-color: var(--color-main-hover);
+      }
+    }
+
+  }
+  
+  &__open-mmenu{
+    flex-shrink: 0;
+    display: none;
+    width: var(--header-height);
+    height: var(--header-height);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    @media (max-width: 1439.98px){
+      display: flex;
+    }
+  }
+}

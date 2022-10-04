@@ -1,0 +1,23 @@
+.more-products
+    h2.more-products__title Больше продуктов
+    .more-products__slider
+        .more-products__top
+            .more-products__swiper.swiper
+                .swiper-wrapper
+                    each i in GLOBALS.products
+                        a(href='/products/detail/').swiper-slide.more-products__slide
+                            span= i
+            .more-products__nav
+                a(href="#").more-products__arr.more-products__prev
+                    <svg width="144" height="60" viewBox="0 0 144 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.7341 31.0197C23.1483 30.4339 23.1483 29.4841 23.7341 28.8983L33.28 19.3524C33.8658 18.7666 34.8155 18.7666 35.4013 19.3524C35.9871 19.9382 35.9871 20.8879 35.4013 21.4737L26.916 29.959L35.4013 38.4443C35.9871 39.0301 35.9871 39.9798 35.4013 40.5656C34.8155 41.1514 33.8658 41.1514 33.28 40.5656L23.7341 31.0197ZM143.598 31.459L24.7947 31.459L24.7947 28.459L143.598 28.459L143.598 31.459Z" fill="#1B4ED1"/>
+                    <circle r="28.4591" transform="matrix(-1 0 0 1 29.9601 29.9591)" stroke="#1B4ED1" stroke-width="3"/>
+                    </svg>
+                a(href="#").more-products__arr.more-products__next
+                    <svg width="144" height="60" viewBox="0 0 144 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M119.864 31.0197C120.45 30.4339 120.45 29.4841 119.864 28.8983L110.318 19.3524C109.732 18.7666 108.782 18.7666 108.197 19.3524C107.611 19.9382 107.611 20.8879 108.197 21.4737L116.682 29.959L108.197 38.4443C107.611 39.0301 107.611 39.9798 108.197 40.5656C108.782 41.1514 109.732 41.1514 110.318 40.5656L119.864 31.0197ZM-1.31134e-07 31.459L118.803 31.459L118.803 28.459L1.31134e-07 28.459L-1.31134e-07 31.459Z" fill="#1B4ED1"/>
+                    <circle cx="113.638" cy="29.9591" r="28.4591" stroke="#1B4ED1" stroke-width="3"/>
+                    </svg>
+        .more-products__bottom
+            .more-products__pag
+

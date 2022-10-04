@@ -1,0 +1,18 @@
+.stack
+    .container
+        .stack__title технологический стек
+        .stack__wrap
+            .stack__items
+                each i in data.list
+                    .stack__item
+                        .stack__img
+                            img(src=i alt="lorem")
+
+            - var n = 0;
+            .stack__lines
+                while n < 104
+                    .stack__line= n++
+                        .stack__line-top
+                        .stack__line-bottom
+                        .stack__line-left
+                        .stack__line-right

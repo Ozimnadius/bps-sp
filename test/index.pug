@@ -1,0 +1,12 @@
+extends ../src/core/main
+
+block content
+    main.page
+        h1 Test page
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, quam?
+
+        - var testFunc = function(){
+        -     return "Test func";
+        -   }
+
+        div #{testFunc()} worked!

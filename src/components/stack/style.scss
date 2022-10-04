@@ -1,0 +1,119 @@
+.stack{
+  background-color: var(--color-main);
+  padding-top: 100px;
+  padding-bottom: 110px;
+  --offset: 30px;
+  --offset-negative: calc(0px - var(--offset));
+  @media (max-width: 767.98px){
+    padding-top: 65px;
+    padding-bottom: 85px;
+    --offset: 20px;
+  }
+
+  &__title{
+    @include h2;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: calc(35px + var(--offset));
+    text-align: center;
+    @media (max-width: 767.98px){
+      font-weight: 500;
+    }
+  }
+
+  &__wrap{
+    position: relative;
+    padding: var(--offset);
+    margin: var(--offset-negative);
+    overflow: hidden;
+  }
+
+  &__items{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    position: relative;
+    z-index: 1;
+    @media (max-width: 767.98px){
+       grid-template-columns: repeat(2,1fr);
+    }
+  }
+
+  &__item{
+    position: relative;
+
+    &:before{
+      content: '';
+      display: block;
+      padding-top: calc(112/355*100%);
+      @media (max-width: 1023.98px){
+        padding-top: calc(92/166*100%);
+      }
+    }
+
+  }
+
+  &__img{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 1023.98px){
+       inset: 20px;
+    }
+
+    img{
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  @mixin line{
+    position: absolute;
+    background-color: #4971da;
+  }
+
+  @mixin line-horizontal{
+    @include line;
+    left: var(--offset-negative);
+    right: var(--offset-negative);
+    height: 1px;
+  }
+
+  @mixin line-vertical{
+    @include line;
+    top: var(--offset-negative);
+    bottom: var(--offset-negative);
+    width: 1px;
+  }
+
+  &__lines{
+    @extend .stack__items;
+    position: absolute;
+    z-index: 2;
+    inset: var(--offset);
+  }
+
+  &__line{
+    @extend .stack__item;
+    font-size: 0;
+
+    &-top{
+      @include line-horizontal;
+      top: 0;
+    }
+    &-bottom{
+      @include line-horizontal;
+      bottom: -1px;
+    }
+
+    &-left{
+      @include line-vertical;
+      left: 0;
+    }
+    &-right{
+      @include line-vertical;
+      right: -1px;
+    }
+  }
+}

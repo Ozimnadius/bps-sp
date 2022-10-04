@@ -1,0 +1,87 @@
+extends ../../src/core/main
+
+block content
+    main.page
+        .page__section.margin-bottom-70
+            -
+                var data = {
+                    img: '/images/content/banner/platforms-detail.jpg',
+                    title: 'СмартВиста Интеграционная платформа (SVIP)',
+                }
+            include ../../src/components/banner/index
+        .page__section.margin-bottom-70
+            -
+                var data = {
+                    h4: 'Платформа предназначена для реализации интеграции большого количества систем путем настройки гибкой маршрутизации сообщений с использованием оркестратора  бизнес-процессов и для преобразования форматов данных.',
+                    p: 'Платформа используется и для добавления новых сервисов,<br> расширяющих бизнес функциональность внешних  систем.'
+                }
+            .container
+                include ../../src/components/platform-content/index
+        .page__section.margin-bottom-100
+            .container
+                -
+                    var data = [
+                        'Платежный шлюз',
+                        'Транзакционный сервис обработки данных',
+                        'Предоставление API  интерфейсов',
+                        'Универсальная ESB шина и преобразователь протоколов',
+                        'Платежный шлюз',
+                    ];
+                include ../../src/components/tasks/index
+        .page__section.margin-bottom-100
+            .container
+                include ../../src/components/platform-chars/index
+        .page__section.margin-bottom-100
+            .container
+                -
+                    var data = {
+                        title: 'Программные продукты,<br>созданные на платформе',
+                        list: [
+                            {
+                                title: 'Платежный шлюз',
+                                url: '/products/detail/'
+                            },
+                            {
+                                title: 'Открытое API',
+                                url: '/products/detail/'
+                            },
+                            {
+                                title: 'Автоматизация бизнес процессов',
+                                url: '/products/detail/'
+                            }
+                        ],
+                    };
+                include ../../src/components/list/index
+        .page__section
+            -
+                var data = {
+                    list: [
+                        '/images/content/stack/extjs.png',
+                        '/images/content/stack/ignite.png',
+                        '/images/content/stack/postgre.png',
+                        '/images/content/stack/docer.png',
+                        '/images/content/stack/openjdk.png',
+                        '/images/content/stack/elastic.png',
+                        '/images/content/stack/nginx.png',
+                        '/images/content/stack/liqui.png',
+                        '/images/content/stack/springboot.png',
+                        '/images/content/stack/logstash.png',
+                        '/images/content/stack/keycloak.png',
+                        '/images/content/stack/kinbana.png',
+                        '/images/content/stack/kubernetes.png',
+                    ]
+                };
+            include ../../src/components/stack/index
+        .page__section.margin-bottom-100
+            .container
+                include ../../src/components/patent/index
+        hr.margin-bottom-100
+        .page__section.margin-bottom-100
+            .container
+                include ../../src/components/more-platforms/index
+        section.page__section.grey
+            .container
+                include ../../src/components/main-consult/index
+
+
+
