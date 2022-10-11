@@ -1,0 +1,22 @@
+.file {
+  display: block;
+  position: relative;
+
+  &__input{
+    display: none;
+  }
+
+  &__name {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 0;
+  }
+
+  svg{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+
+  }
+}

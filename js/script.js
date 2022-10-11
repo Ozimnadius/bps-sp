@@ -10,6 +10,7 @@ class Events {
 
         this.elems = document.querySelectorAll('[data-event]');
         this.call = document.querySelector('.call');
+        this.resume = document.querySelector('.resume');
         this.menu = document.querySelector('.menu');
 
         this.init();
@@ -32,8 +33,17 @@ class Events {
                 case "closeCall":
                     i.addEventListener('click', this.closeCall.bind(this));
                     break;
+                case "openResume":
+                    i.addEventListener('click', this.openResume.bind(this));
+                    break;
+                case "closeResume":
+                    i.addEventListener('click', this.closeResume.bind(this));
+                    break;
                 case "sendCall":
                     i.addEventListener('submit', this.sendCall.bind(this));
+                    break;
+                case "sendResume":
+                    i.addEventListener('submit', this.sendResume.bind(this));
                     break;
                 default:
                     console.log("Не мое событие: " + eventName);
@@ -42,6 +52,12 @@ class Events {
 
         this.call.addEventListener('click',  (e)=>{
             if (!e.target.closest('.call__form')){
+                this.closeCall(e);
+            }
+        });
+
+        this.resume.addEventListener('click',  (e)=>{
+            if (!e.target.closest('.resume__form')){
                 this.closeCall(e);
             }
         });
@@ -89,6 +105,43 @@ class Events {
             type: "POST",
             url: url,
             data: data,
+            success: function (result) {
+                if (result.status) {
+                    form.classList.add("ok");
+                } else {
+                    alert("Что-то пошло не так, попробуйте еще раз!!!");
+                }
+            },
+            error: function (result) {
+                alert("Что-то пошло не так, попробуйте еще раз!!!");
+            },
+        });
+    }
+
+    openResume(e) {
+        e.preventDefault();
+        this.resume.showModal();
+        document.querySelector('html').classList.add('ovh');
+    }
+
+    closeResume(e) {
+        e.preventDefault();
+        this.resume.close();
+        document.querySelector('html').classList.remove('ovh');
+    }
+
+    sendResume(e) {
+        e.preventDefault();
+        let form = e.target,
+            data = new FormData(form),
+            url = form.action;
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            processData: false,
+            contentType: false,
             success: function (result) {
                 if (result.status) {
                     form.classList.add("ok");
@@ -215,5 +268,45 @@ window.addEventListener('load', function (){
             document.querySelector('.search__input').value = '';
         })
     }
+});
+window.addEventListener('load', function (){
+    let file = document.querySelector('.file__input');
+
+    if (file){
+        file.addEventListener('change', function (e){
+
+            let name = document.querySelector('.file__name'),
+                file = this.files[0];
+            if(file){
+                name.innerHTML = file.name;
+                name.classList.add('active');
+            } else {
+                name.innerHTML = 'Прикрепить резюме(docx/pdf)';
+                name.classList.remove('active');
+            }
+
+        });
+    }
+});
+window.addEventListener('load', function () {
+    $('.jobs-item__link').each(function (x,i){
+        let $this = $(this),
+            $item = $this.closest('.jobs-item'),
+            $desc = $item.find('.jobs-item__desc');
+
+        $item.css('--height',`${$desc.height()}px`)
+        console.log($desc.height());
+    });
+
+
+    $('.jobs-item__link').on('click', function () {
+        let $this = $(this),
+            $item = $this.closest('.jobs-item'),
+            $more = $item.find('.jobs-item__more');
+
+        $this.toggleClass('open');
+        $more.toggleClass('open');
+
+    });
 });
 //# sourceMappingURL=script.js.map

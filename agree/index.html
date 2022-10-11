@@ -172,6 +172,43 @@
         <input class="form__submit" type="submit" value="Обсудить проект">
       </form>
     </dialog>
+    <dialog class="resume">
+      <form class="form resume__form" action="/php/ajax.php" method="post" data-event="sendResume" enctype="multipart/form-data">
+        <button class="form__close" type="button" data-event="closeResume"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="black"/>
+</svg>
+        </button>
+        <div class="form__title">Отправьте нам свое резюме</div>
+        <div class="form__sub">На должность:</div>
+        <div class="form__job">Backend Разработчик (Python)</div>
+        <div class="form__fields">
+          <div class="form__field">
+            <input class="form__input" type="text" name="name" placeholder="*Имя" required>
+          </div>
+          <div class="form__field">
+            <label class="file">
+              <input class="file__input" type="file" name="file" accept=".doc,.docx,.pdf,application/msword"><span class="file__fake"><span class="file__name">Прикрепить резюме(docx/pdf)</span><svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26.1252 9.50065V27.709C26.1252 29.3887 25.4579 30.9996 24.2702 32.1873C23.0824 33.3751 21.4715 34.0423 19.7918 34.0423C18.1121 34.0423 16.5012 33.3751 15.3135 32.1873C14.1258 30.9996 13.4585 29.3887 13.4585 27.709V7.91732C13.4585 6.8675 13.8755 5.86068 14.6179 5.11835C15.3602 4.37602 16.367 3.95898 17.4168 3.95898C18.4666 3.95898 19.4735 4.37602 20.2158 5.11835C20.9581 5.86068 21.3752 6.8675 21.3752 7.91732V24.5423C21.3752 24.9622 21.2083 25.365 20.9114 25.6619C20.6145 25.9588 20.2118 26.1257 19.7918 26.1257C19.3719 26.1257 18.9692 25.9588 18.6722 25.6619C18.3753 25.365 18.2085 24.9622 18.2085 24.5423V9.50065H15.8335V24.5423C15.8335 25.5921 16.2505 26.5989 16.9929 27.3413C17.7352 28.0836 18.742 28.5007 19.7918 28.5007C20.8416 28.5007 21.8485 28.0836 22.5908 27.3413C23.3331 26.5989 23.7502 25.5921 23.7502 24.5423V7.91732C23.7502 6.23761 23.0829 4.62671 21.8952 3.43897C20.7074 2.25124 19.0965 1.58398 17.4168 1.58398C15.7371 1.58398 14.1262 2.25124 12.9385 3.43897C11.7508 4.62671 11.0835 6.23761 11.0835 7.91732V27.709C11.0835 30.0186 12.001 32.2336 13.6341 33.8667C15.2672 35.4998 17.4822 36.4173 19.7918 36.4173C22.1014 36.4173 24.3164 35.4998 25.9496 33.8667C27.5827 32.2336 28.5002 30.0186 28.5002 27.709V9.50065H26.1252Z" fill="#626262"/>
+</svg></span>
+            </label>
+          </div>
+          <div class="form__field">
+            <input class="form__input" type="tel" name="tel" placeholder="Телефон">
+          </div>
+          <div class="form__field">
+            <input class="form__input" type="email" name="email" placeholder="*e-mail" required>
+          </div>
+        </div>
+        <div class="form__accept">
+          <label class="accept">
+            <input class="accept__input" type="checkbox" name="accept" required checked><span class="accept__fake"><span class="accept__check"><svg width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 8.68L5.5 13L18 1" stroke="#1B4ED1" stroke-width="2"/>
+</svg></span><span class="accept__txt">Я принимаю условия <a href="/agree/">Пользовательского соглашения</a> и согласен с <a href="/policy/">Политикой конфиденциальности</a></span></span>
+          </label>
+        </div>
+        <input class="form__submit" type="submit" value="Отправить">
+      </form>
+    </dialog>
     <div class="menu">
       <div class="menu__top">
         <div class="menu__logo"><img src="/images/content/logo-2.png" alt="lorem"></div>

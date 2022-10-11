@@ -8,6 +8,7 @@ class Events {
 
         this.elems = document.querySelectorAll('[data-event]');
         this.call = document.querySelector('.call');
+        this.resume = document.querySelector('.resume');
         this.menu = document.querySelector('.menu');
 
         this.init();
@@ -30,8 +31,17 @@ class Events {
                 case "closeCall":
                     i.addEventListener('click', this.closeCall.bind(this));
                     break;
+                case "openResume":
+                    i.addEventListener('click', this.openResume.bind(this));
+                    break;
+                case "closeResume":
+                    i.addEventListener('click', this.closeResume.bind(this));
+                    break;
                 case "sendCall":
                     i.addEventListener('submit', this.sendCall.bind(this));
+                    break;
+                case "sendResume":
+                    i.addEventListener('submit', this.sendResume.bind(this));
                     break;
                 default:
                     console.log("Не мое событие: " + eventName);
@@ -40,6 +50,12 @@ class Events {
 
         this.call.addEventListener('click',  (e)=>{
             if (!e.target.closest('.call__form')){
+                this.closeCall(e);
+            }
+        });
+
+        this.resume.addEventListener('click',  (e)=>{
+            if (!e.target.closest('.resume__form')){
                 this.closeCall(e);
             }
         });
@@ -87,6 +103,43 @@ class Events {
             type: "POST",
             url: url,
             data: data,
+            success: function (result) {
+                if (result.status) {
+                    form.classList.add("ok");
+                } else {
+                    alert("Что-то пошло не так, попробуйте еще раз!!!");
+                }
+            },
+            error: function (result) {
+                alert("Что-то пошло не так, попробуйте еще раз!!!");
+            },
+        });
+    }
+
+    openResume(e) {
+        e.preventDefault();
+        this.resume.showModal();
+        document.querySelector('html').classList.add('ovh');
+    }
+
+    closeResume(e) {
+        e.preventDefault();
+        this.resume.close();
+        document.querySelector('html').classList.remove('ovh');
+    }
+
+    sendResume(e) {
+        e.preventDefault();
+        let form = e.target,
+            data = new FormData(form),
+            url = form.action;
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            processData: false,
+            contentType: false,
             success: function (result) {
                 if (result.status) {
                     form.classList.add("ok");

@@ -6,7 +6,7 @@
                 .feed__desc
                     p Спасибо за ваш интерес к нашим продуктам. Вы можете связаться с одним из наших экспертов, используя форму обратной связи, самостоятельно написать нам на почту или позвонить по телефону.
             .feed__right
-                form(action='/php/ajax.php' method='post').feed__form.form
+                form(action='/php/ajax.php' method='post' data-event='sendCall').feed__form.form
                     .form__fields
                         .form__field
                             input(type='text' name='name' placeholder='*Имя' required).form__input

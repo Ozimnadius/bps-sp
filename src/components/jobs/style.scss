@@ -65,6 +65,19 @@
     margin-bottom: 25px;
   }
 
+  &__more {
+    height: 50px;
+    overflow: hidden;
+    @include tr;
+    @media (max-width: 767.98px){
+      height: 63px;
+    }
+
+    &.open{
+      height: var(--height);
+    }
+  }
+
   &__desc {
     max-width: 540px;
     @media (max-width: 1023.98px) {
@@ -119,6 +132,7 @@
 
     svg {
       flex-shrink: 0;
+
       path {
         fill: currentColor;
       }
@@ -164,8 +178,20 @@
     text-transform: uppercase;
     cursor: pointer;
     @include tr;
-    @media (max-width: 767.98px){
+    @media (max-width: 767.98px) {
       order: 1;
+    }
+
+    &.open {
+      span {
+        &:nth-child(3) {
+          display: block;
+        }
+
+        &:nth-child(2) {
+          display: none;
+        }
+      }
     }
 
     &:hover {
@@ -178,13 +204,23 @@
       }
     }
 
+    span {
+      &:nth-child(2) {
+        display: block;
+      }
+
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+
   }
 
   &__btn {
     @include btn-blue;
     width: 273px;
     height: 59px;
-    @media (max-width: 767.98px){
+    @media (max-width: 767.98px) {
       width: 182px;
     }
   }

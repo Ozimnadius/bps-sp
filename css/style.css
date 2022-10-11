@@ -2207,6 +2207,17 @@ hr {
   margin-bottom: 25px;
 }
 
+.jobs-item__more {
+  height: 50px;
+  overflow: hidden;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.jobs-item__more.open {
+  height: var(--height);
+}
+
 .jobs-item__desc {
   max-width: 540px;
 }
@@ -2291,12 +2302,28 @@ hr {
   transition: var(--transition);
 }
 
+.jobs-item__link.open span:nth-child(3) {
+  display: block;
+}
+
+.jobs-item__link.open span:nth-child(2) {
+  display: none;
+}
+
 .jobs-item__link:hover {
   color: var(--color-main);
 }
 
 .jobs-item__link svg path {
   stroke: currentColor;
+}
+
+.jobs-item__link span:nth-child(2) {
+  display: block;
+}
+
+.jobs-item__link span:nth-child(3) {
+  display: none;
 }
 
 .jobs-item__btn {
@@ -2546,8 +2573,31 @@ hr {
   line-height: 120%;
   font-size: 21px;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   text-align: center;
+}
+
+.form__sub {
+  font-family: "Roboto Condensed", serif;
+  font-weight: 400;
+  line-height: 120%;
+  font-weight: 500;
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.form__job {
+  font-family: "Roboto Condensed", serif;
+  font-weight: 400;
+  line-height: 120%;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #1B4ED1;
+  margin-bottom: 15px;
 }
 
 .form__fields {
@@ -2557,11 +2607,14 @@ hr {
   margin-bottom: 40px;
 }
 
+.form__field {
+  border-bottom: 1px solid #d7d7d7;
+}
+
 .form__input {
   width: 100%;
   font-size: 16px;
   padding: 12px 0;
-  border-bottom: 1px solid #d7d7d7;
 }
 
 .form__accept {
@@ -2731,6 +2784,24 @@ hr {
   padding: 50px 20px;
 }
 
+.resume {
+  padding: 0;
+  border: none;
+}
+
+.resume::-webkit-backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.resume::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.resume__form {
+  width: 527px;
+  padding: 80px;
+}
+
 .menu {
   position: fixed;
   z-index: 100;
@@ -2816,6 +2887,28 @@ hr {
 
 .menu__item svg path {
   stroke: currentColor;
+}
+
+.file {
+  display: block;
+  position: relative;
+}
+
+.file__input {
+  display: none;
+}
+
+.file__name {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 0;
+}
+
+.file svg {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
 }
 
 .footer {
@@ -4221,6 +4314,10 @@ hr {
     padding: 30px 15px;
   }
 
+  .jobs-item__more {
+    height: 63px;
+  }
+
   .jobs-item__bottom-left {
     gap: 40px;
   }
@@ -4326,6 +4423,19 @@ hr {
   }
 
   .call__form {
+    width: 100%;
+    height: 100%;
+  }
+
+  .resume {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  .resume__form {
     width: 100%;
     height: 100%;
   }
