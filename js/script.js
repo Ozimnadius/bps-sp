@@ -58,7 +58,7 @@ class Events {
 
         this.resume.addEventListener('click',  (e)=>{
             if (!e.target.closest('.resume__form')){
-                this.closeCall(e);
+                this.closeResume(e);
             }
         });
 
@@ -157,6 +157,12 @@ class Events {
 
 }
 window.addEventListener('load', function () {
+
+    const mainProductsSlider = new Swiper(document.querySelector('.main-products__swiper'), {
+        spaceBetween: 20,
+        allowTouchMove: false
+    });
+
     const mainSlider = new Swiper(document.querySelector('.main-slider__swiper'), {
         pagination: {
             el: '.main-slider__pag',
@@ -165,6 +171,9 @@ window.addEventListener('load', function () {
         navigation: {
             nextEl: '.main-slider__next',
             prevEl: '.main-slider__prev',
+        },
+        thumbs: {
+            swiper: mainProductsSlider,
         },
     });
 

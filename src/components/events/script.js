@@ -56,7 +56,7 @@ class Events {
 
         this.resume.addEventListener('click',  (e)=>{
             if (!e.target.closest('.resume__form')){
-                this.closeCall(e);
+                this.closeResume(e);
             }
         });
 
